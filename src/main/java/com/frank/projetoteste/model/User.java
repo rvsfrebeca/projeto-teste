@@ -19,5 +19,4 @@ public class User {
     private final String telefone;
 
     private final String email;
-
 }
