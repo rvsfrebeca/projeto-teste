@@ -17,19 +17,15 @@ public class UserService {
     private final UserRepository repository;
 
     public List<User> getAllUsers(){
-
         return repository.getAllUsers();
     }
-
 
     public User getUser(UUID id) {
         return repository.getUser(id);
     }
 
     public User createUser(UserDTO userReceived) {
-
         return repository.createUser(userReceived);
-
     }
 
     public void updateUser(UserDTO userToUpdate, UUID id) {

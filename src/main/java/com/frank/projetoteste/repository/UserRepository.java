@@ -31,7 +31,6 @@ public class UserRepository {
 
     private final String DELETE_USER = "DELETE FROM user_table WHERE id = ?";
 
-
     public List<User> getAllUsers(){
         return jdbcTemplate.query(GET_ALL_USERS, userRowMapper());
     }
@@ -50,7 +49,6 @@ public class UserRepository {
     }
 
     public User createUser(UserDTO userReceived) {
-
         SimpleJdbcInsert insert = getJdbcInsert();
 
         UUID userId = UUID.randomUUID();
@@ -58,7 +56,6 @@ public class UserRepository {
         Map<String, Object> params = buildParams(userReceived, userId);
 
         insert.execute(params);
-
         return userReceived.toController(userId);
     }
 
@@ -73,14 +70,17 @@ public class UserRepository {
 
     public SimpleJdbcInsert getJdbcInsert(){
         SimpleJdbcInsert jdbcInsert = new SimpleJdbcInsert(jdbcTemplate);
-
         return jdbcInsert.withTableName(TABLE_NAME);
     }
 
 
     public void updateUser(UserDTO userToUpdate, UUID id) {
-
-        jdbcTemplate.update(UPDATE_USER, userToUpdate.getNome(), userToUpdate.getTelefone(), userToUpdate.getEmail(), id);
+        jdbcTemplate.update(
+                UPDATE_USER,
+                userToUpdate.getNome(),
+                userToUpdate.getTelefone(),
+                userToUpdate.getEmail(),
+                id);
     }
 
     public void deleteUser(UUID id) {

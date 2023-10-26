@@ -9,8 +9,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 @Configuration
 public class AppConfiguration {
 
-
-
     @Bean
     public UserService userService(UserRepository userRepository){
         return new UserService(userRepository);
@@ -20,5 +18,4 @@ public class AppConfiguration {
     public UserRepository userRepository(JdbcTemplate jdbcTemplate){
         return new UserRepository(jdbcTemplate);
     }
-
 }

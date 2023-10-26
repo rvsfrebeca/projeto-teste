@@ -6,7 +6,6 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Getter;
 
-
 import java.util.UUID;
 
 @Builder
@@ -34,6 +33,4 @@ public class UserDTO {
                 .email(this.email)
                 .build();
     }
-
-
 }

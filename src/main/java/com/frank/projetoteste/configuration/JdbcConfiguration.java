@@ -22,12 +22,10 @@ public class JdbcConfiguration {
     @Bean
     public DataSource dataSource() {
         HikariDataSource dataSource = new HikariDataSource();
-
         dataSource.setDriverClassName(Driver.class.getName());
         dataSource.setJdbcUrl(jdbcUrl);
         dataSource.setUsername(username);
         dataSource.setPassword(password);
-
         return dataSource;
     }
 }

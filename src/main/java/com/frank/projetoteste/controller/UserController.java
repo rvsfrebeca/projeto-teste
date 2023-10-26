@@ -28,7 +28,6 @@ public class UserController {
         return service.getUser(id);
     }
 
-
     @PostMapping()
     public User createUser(@Valid @RequestBody UserDTO userReceived) {
         return service.createUser(userReceived);
@@ -43,6 +42,4 @@ public class UserController {
     public void deleteUser(@PathVariable UUID id) {
         service.deleteUser(id);
     }
-
-
 }
