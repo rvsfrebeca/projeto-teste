@@ -1,4 +1,4 @@
 jdbc:
-  url: jdbc:postgresql://isabelle.db.elephantsql.com:5432/cpdbwryx
-  username: cpdbwryx
-  password: bRPtBYrPogjsm47UZJlgkgp8ffnxRrwQ
+  url: ${DB_URL}
+  username: ${DB_USERNAME}
+  password: ${DB_PASS}
